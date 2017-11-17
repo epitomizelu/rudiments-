@@ -1,0 +1,57 @@
+html,body {
+	width: 100%;
+	height: 100%;
+}
+
+ul,li {
+	margin: 0;
+	padding: 0;
+}
+.modal {
+	width: 40%; 
+	box-shadow: 0 0 10px gray;
+}
+
+.layout {
+	padding-left: 10px;
+}
+
+.title {
+	border-bottom: 1px solid #F5F5F5;
+	height: 25%;
+	min-height: 40px;
+	line-height: 40px;
+}
+
+.btn-area {
+	min-height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 10px;
+	background: #F5F5F5;
+}
+
+.btn {
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+.ok {
+	background: #60C060;
+	color: white;
+}
+
+.ok:hover {
+	background: #C9FAC9;	
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.content {
+	padding: 20px;
+}
+
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="index.css">
+	<script src="vue.js"></script>
+</head>
+<body>
+<div class="modal layout">
+	<div class="title">这是一个模态框</div>
+	<div class="content">内容区</div>
+	<div class="btn-area">
+    	<span class="btn ok">确定</span>
+    	<span class="btn cancel">取消</span>
+	</div>
+</div>
+
+<div class="container">
+	<my-modal title="温馨提示" @myclick="myclick">
+		<ul slot="content">
+			<li v-for="item in items">{{item}}</li> 
+		</ul>
+		<span  class="btn ok" @click="back">返回</span>
+	</my-modal>
+	<my-modal></my-modal>
+</div>
+
+<script src="app.js"></script>	
+</body>
+</html>

@@ -1,0 +1,80 @@
+html,body,p,h1,h2,h3,h4,h5,h6,ul {
+	margin: 0px;
+	padding: 0px;
+	font-size: 62.5%;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.layout { 
+	padding: 0 30%;
+}
+
+header {
+	width: 100%;
+	height: 3rem;
+	background: red;
+	line-height: 1.5rem;
+	display: flex;
+	align-items: center;
+	color: white;
+}
+
+.input-area {
+	width: 100%;
+}
+
+.input-area input {
+	width: 100%;
+	height: 2rem;
+	padding-left: 1rem;
+	box-sizing: border-box;
+}
+
+.operation-area {
+	display: flex;
+}
+
+.btn-area {
+	width: 1100%;
+	display: flex;
+	flex: 1;
+	justify-content: flex-end;
+}
+
+.btn-area li{
+	padding-left: 1rem;
+}
+
+.to-do-detail {
+	display: flex;
+}
+
+.to-do-detail span, .to-do-detail .editor {
+	flex: 1;
+}
+
+.to-do-detail img {
+	padding: 0 .5rem;
+}
+
+.completed {
+	text-decoration: line-through;
+}
+
+.editing {
+	display: none;
+	width: 100%;
+}
+
+.active {
+	background: blue;
+	box-shadow: 0 0 1rem gray;
+}

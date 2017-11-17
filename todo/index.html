@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <header class="layout">
+        <div>
+            <p>
+                任务记录列表
+            </p>
+        </div>
+    </header>
+    <div class="layout main">
+        <div class="input-area">
+            <h6>请输入待办事项</h6>
+            <input type="text" placeholder="在此输入，并按回车Enter键确认" v-model="todo" @keyup.enter='addTodoList'>
+        </div>
+        <div class="operation-area">
+            <h6>{{notFinishedListLength}}条没有完成的待办任务</h6>
+            <ul class="btn-area">
+                <li class="active"><a href="#all">全部</a></li>
+                <li><a href="#finished">已完成任务</a></li>
+                <li><a href="#notfinished">未完成任务</a></li>
+            </ul>
+        </div>
+        <ul class="to-do-list">
+	        <li class="to-do-detail" v-for="item in filteredList">
+	            <input type="checkbox" v-model="item.isChecked">
+	            <span :class="{completed: item.isChecked,editing: item === editTodoItem}" @click="editTodo(item)">{{item.content}}</span>
+	            <input @keyup.enter="editFinished"
+	            	   @blur="editFinished" 
+	            	   @keyup.esc="cancelEdit(item)"
+	                   v-focus="item === editTodoItem" 
+	                   type="text" class="editor" 
+	                   :class="{editing: item !== editTodoItem}" 
+	                   v-model="editTodoItem.content">
+	            <img src="delete.png" alt="" @click="deleteTodo(item)">	             
+	        </li>
+        </ul>
+        <child my-message='test'></child>
+        <custom-select :options='options'></custom-select>
+    </div>
+
+    <script src="app.js"></script>
+    <script type="text/template">
+    	<select name="" id="" >
+        	<option value="">html</option>
+        	<option value="">javascript</option>
+        	<option value="">java</option>
+        	<option value="">c-sharp</option>
+        	<option value="">c++</option>
+        	<option value="">c</option>
+        	<option value="">PHP</option>
+        	<option value="">PYTHON</option>
+    	</select>
+    </script>
+</body>
+
+</html>

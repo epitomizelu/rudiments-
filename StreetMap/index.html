@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+
+
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <aside class="menu">
+        {{message}}
+        <input type="text" v-model:value='message'>
+        <ul v-for="item in [1,2,3]">
+         <li>{{item}}</li>
+        </ul>
+        </aside>
+        <main>
+        	<div id="container" tabindex="0"></div>
+        </main>
+        
+
+    </div>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=fa358e530b6cd2b8a9c3b0e198788732"></script>
+    <script type="text/javascript">
+    var map = new AMap.Map('container', {
+        resizeEnable: true,
+        zoom: 10,
+        center: [116.480983, 40.0958]
+    });
+
+    let data = {
+        message : 'xx hh'
+    }
+
+    var vue =new Vue({
+        el: '.menu',
+        data : data
+    });
+
+
+    </script>
+</body>
+
+</html>
